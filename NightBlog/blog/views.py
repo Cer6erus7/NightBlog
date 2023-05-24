@@ -10,4 +10,5 @@ def home(request):
 
 def post(request, id):
     single_post = Post.objects.get(id=id)
-    return render(request, 'post.html', {'single_post': single_post})
+    categories = Category.objects.all()
+    return render(request, 'post.html', {'single_post': single_post, 'categories': categories})
